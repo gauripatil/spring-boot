@@ -44,5 +44,19 @@ public class LearnSpringBootApplication {
  * 		3.5 Secure your web application or REST API - Spring Boot Starter Security
  *
  *
+ * 	Exploring Spring Boot Auto Configuration
+ * 	1. I need a lot of Configuration to Build a Spring app
+ * 		ex- Component Scan, Dispatcher Servlet, Data Sources, JSON Conversion etc.
+ * 	2. How can I simplify this?
+ * 		1. Auto Configuration: Automated configuration for your app
+ * 			1. Decided based on
+ * 				1. which frameworks are in classpath
+ * 				2. What is existing configuration(Annotations)
+* 	Example - Spring Boot Starter Web
+ * 		1. Dispatcher servlet(DispatcherServeletAutoConfiguration)
+ * 		2. Embedded Servlet Container - Tomcat is default (EmbeddedWebServerFactoryCustomizerAutoConfiguration)
+ * 		3. Default Error Pages - (Error MVC Autoconfiguration)
+ * 		4. Bean <-> JSON (JacksonHttpMessageConvertersConfiguration)
+ *
  * 	]
  */
