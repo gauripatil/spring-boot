@@ -27,4 +27,22 @@ public class LearnSpringBootApplication {
  * 			2.2 Different Configuration for Different Environments
  * 				2.2.1 Profiles, ConfigurationProperties
  * 			2.3 Monitoring (Spring Boot Actuator)
+ *
+ *
+ * 	Exploring Spring Boot Starter Projects
+ * 	1. I need a lot of frameworks to build web application features:
+ * 		1.1 Build REST API - I need Spring, Spring MVC, TOMCAT, JSON Conversion
+ * 		1.2 Write Unit tests - I need Spring Test, Mockito, JUnit
+ * 	2. How can I group them and make it easy to build web applications?
+ * 		2.1 Starters - Convenient dependency descriptors for diff features.
+ * 	3. Spring Boot provides variety of starter projects:
+ * 		3.1 Web Application & REST API - Spring Boot Starter Web (Spring-webmvc, spring-web,
+ * 			spring-boot-starter-tomcat, spring-boot-starter-json)
+ * 		3.2 Unit Tests - Spring Boot Starter Test
+ * 		3.3 Talk to database using JPA - Spring Boot Starter Data JPA
+ * 		3.4 Talk to database using JDBC - Spring Boot Starter JDBC
+ * 		3.5 Secure your web application or REST API - Spring Boot Starter Security
+ *
+ *
+ * 	]
  */
