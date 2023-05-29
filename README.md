@@ -39,3 +39,8 @@
  		2. Embedded Servlet Container - Tomcat is default (EmbeddedWebServerFactoryCustomizerAutoConfiguration)
  		3. Default Error Pages - (Error MVC Autoconfiguration)
  		4. Bean <-> JSON (JacksonHttpMessageConvertersConfiguration)
+		
+# Build faster with Spring Boot Devtools
+ 	1. Increase developer productivity
+ 	2. Why do you restart the server manually for every code change?
+ 	3. Remember: for pom.xml dependency changes, you will need to restart the server.
