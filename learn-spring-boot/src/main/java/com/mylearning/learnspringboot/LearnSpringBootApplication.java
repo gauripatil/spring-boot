@@ -63,7 +63,7 @@ public class LearnSpringBootApplication {
  	2. Why do you restart the server manually for every code change?
  	3. Remember: for pom.xml dependency changes, you will need to restart the server.
 
- 	Managing App. Configuration using Profiles
+ 	Get Production Ready with - Managing App. Configuration using Profiles
  	1. Application have different environments - Dev, QA, Stage, Prod etc
  	2. Different environment needs different configuration -
  		1. Different databases
@@ -77,6 +77,12 @@ public class LearnSpringBootApplication {
  		4. warning
  		5. error
  		6. off
+
+ 	Get Production Ready with - ConfigurationProperties
+ 	1. Create Service with @ConfigurationProperties
+ 	2. To test create simple controller and map to url
+ 	3. Put all the configurations in application properties for - dev, prod, default etc
+ 	4. Hit endpoint and see the response
 
  *
  	]
