@@ -44,3 +44,20 @@
  	1. Increase developer productivity
  	2. Why do you restart the server manually for every code change?
  	3. Remember: for pom.xml dependency changes, you will need to restart the server.
+	
+# Managing App. Configuration using Profiles
+ 	1. Application have different environments - Dev, QA, Stage, Prod etc
+ 	2. Different environment needs different configuration -
+ 		1. Different databases
+ 		2. Different Web Services
+ 	3. How can you provide different configuration for different environment:
+ 		1. Profiles: Environment specific configuration
+ 	4. Log levels:
+ 		1. trace
+ 		2. debug
+ 		3. info
+ 		4. warning
+ 		5. error
+ 		6. off
+	5. Set active profile using - spring.profiles.active=prod in application.properties	
+	
