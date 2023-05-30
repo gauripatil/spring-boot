@@ -61,3 +61,9 @@
  		6. off
 	5. Set active profile using - spring.profiles.active=prod in application.properties	
 	
+# Get Production Ready with - ConfigurationProperties
+ 	1. Create Service with @ConfigurationProperties
+ 	2. To test create simple controller and map to url
+ 	3. Put all the configurations in application properties for - dev, prod, default etc
+ 	4. Hit endpoint and see the response
+	
