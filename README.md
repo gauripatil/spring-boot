@@ -67,3 +67,21 @@
  	3. Put all the configurations in application properties for - dev, prod, default etc
  	4. Hit endpoint and see the response
 	
+# Simplify Deployment with Spring Boot Embedded Servers
+### OLD WAY
+ 	1. How do you deploy your application?
+ 	 	1. Install Java
+ 		2. Install Web/Application Server
+ 			Tomcat/WebSphere/WebLogic etc.
+ 		3. Deploy the application WAR (Web ARchive)
+ 			This is OLD WAR approach. Complex setup!
+ ### NEW WAY
+ 	2. Embedded Server - Simpler alternative
+ 		1. Install Java
+ 		2. Run JAR file
+ 		NOTE: Make JAR Not WAR
+ 		3. Embedded Server examples:
+ 			1. Spring-boot-starter-tomcat
+ 			2. Spring-boot-starter-jetty
+
+	
