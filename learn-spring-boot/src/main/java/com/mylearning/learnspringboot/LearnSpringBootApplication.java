@@ -101,6 +101,13 @@ public class LearnSpringBootApplication {
  			1. Spring-boot-starter-tomcat
  			2. Spring-boot-starter-jetty
 
+ 	Monitor Applications using Spring Boot Actuator
+ 	1. Monitor and manage your application in your production
+ 	2. Provides number of endpoints:
+ 		1. beans - Complete list of Spring beans in your application
+ 		2. health - application health information
+ 		3. metrics - Application metrics
+ 		4. mappings - details around Request mappings
  *
  	]
  */
