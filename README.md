@@ -91,5 +91,23 @@
  		2. health - application health information
  		3. metrics - Application metrics
  		4. mappings - details around Request mappings
+		
+# Spring VS Spring MVC VS Spring Boot
+ 	1. Spring Framework: Dependency Injection
+ 		1. @Component, @Autowired, Component Scan etc..
+ 		2. Just dependency injection is not sufficient (You need other frameworks to build apps)
+ 			1. Spring modules & Spring projects: Extend Spring Eco System.
+ 				- Provide good ecosystem with other frameworks(Hibernate/JPA, JUnit/Mockito)
+ 	2. Spring MVC (Spring Module) - Simplify building web apps & REST API
+ 		1. Building web application with Struts was very complex!
+ 		2. @Controller, @RestController, @RequestMapping("/course")
+ 	3. Spring Boot (Spring Project) - Build PRODUCTION READY apps QUICKLY
+ 		1. Starter projects - Make it easy to build variety of applications.
+ 		2. Auto Configuration - Eliminate configuration to setup Spring, Spring MVC, and other frameworks.
+ 		3. Enable NFR - Non Functional Requirements
+ 			1. Actuator - Enables advanced monitoring of the applications
+ 			2. Embedded Server - No need of separate application server.
+ 			3. Logging & Error Handling 
+ 			4. Profiles & ConfigurationProperties
 
 	
