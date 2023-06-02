@@ -14,4 +14,14 @@ public class SayHelloController {
         return "Hello World!";
     }
 
+    // "/say-helloe-jsp" => sayHello.jsp
+    // /src/main/META-INF/resources/WEB-INF/jsp/sayHello.jsp
+    // /src/main/META-INF/resources/WEB-INF/jsp/welcome.jsp
+    // /src/main/META-INF/resources/WEB-INF/jsp/todos.jsp
+
+    @RequestMapping("say-hello-jsp")
+    public String sayHelloJsp() {
+        return "sayHello";
+    }
+
 }
