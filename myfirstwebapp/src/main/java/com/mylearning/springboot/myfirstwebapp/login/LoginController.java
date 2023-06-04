@@ -1,7 +1,9 @@
 package com.mylearning.springboot.myfirstwebapp.login;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LoginController {
@@ -9,7 +11,9 @@ public class LoginController {
     // "/login" => login.jsp
     // /src/main/META-INF/resources/WEB-INF/jsp/login.jsp
     @RequestMapping("login")
-    public String doLogin() {
+    public String doLogin(@RequestParam String name, ModelMap model) {
+        model.put("name", name);
+        System.out.println("Request Param : " + name);
         return "login";
     }
 }
