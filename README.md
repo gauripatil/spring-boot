@@ -109,5 +109,10 @@
  			2. Embedded Server - No need of separate application server.
  			3. Logging & Error Handling 
  			4. Profiles & ConfigurationProperties
+			
+# Understanding Logging
+	1. Spring boot makes Logging easy: 
+		1. spring-boot-starter-logging
+	2. Default- LogBack with SLF4J
 
 	
