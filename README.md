@@ -114,5 +114,18 @@
 	1. Spring boot makes Logging easy: 
 		1. spring-boot-starter-logging
 	2. Default- LogBack with SLF4J
+	
+# Understanding DispatcherServelet, Model 1, Model 2, FrontController
+
+## Model 1
+![Model1](https://github.com/gauripatil/spring-boot/assets/3206551/96a5dc6d-9d10-4d28-a478-3451bd3c8355)
+
+## Model 2
+![Model2](https://github.com/gauripatil/spring-boot/assets/3206551/371950e2-2edd-492e-94f5-f830e5ada72e)
+
+## FrontController
+![FrontController](https://github.com/gauripatil/spring-boot/assets/3206551/1a542856-441b-4cf6-930d-5b33c7a7491c)
+
+
 
 	
