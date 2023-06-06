@@ -126,6 +126,10 @@
 ## FrontController
 ![FrontController](https://github.com/gauripatil/spring-boot/assets/3206551/1a542856-441b-4cf6-930d-5b33c7a7491c)
 
+## Dispatcher Servelet
+
+![DispatcherServelet](https://github.com/gauripatil/spring-boot/assets/3206551/9a425327-85e1-436c-89e2-0a59897d0e2e)
+![FlowDispatcherServlet](https://github.com/gauripatil/spring-boot/assets/3206551/55b42feb-740c-4c08-a7a4-36d3162d2d6b)
 
 
 	
