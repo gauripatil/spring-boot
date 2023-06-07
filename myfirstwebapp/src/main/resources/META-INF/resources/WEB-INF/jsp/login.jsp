@@ -4,7 +4,11 @@
     </title>
 
     <body>
-        <h1>Hello!!</h1>
-        <h3>Welcome to the SpringBoot Learning Class <b>${name}</b> !!</h3>
+        <h3>Welcome to the Login Page</h3>
+        <form method="post">
+            Name: <input type="text" name="name">
+            Password: <input type="password" name="password">
+            <input type="submit">
+        </form>
     </body>
 </html>
