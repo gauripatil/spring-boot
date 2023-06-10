@@ -132,4 +132,8 @@
 ![FlowDispatcherServlet](https://github.com/gauripatil/spring-boot/assets/3206551/55b42feb-740c-4c08-a7a4-36d3162d2d6b)
 
 
+# Session VS Request Scope
+![SessionVsRequestScope](https://github.com/gauripatil/spring-boot/assets/3206551/91f330c0-d49c-4d11-84ad-553bb27f5bdf)
+
+
 	
