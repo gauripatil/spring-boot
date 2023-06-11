@@ -6,14 +6,14 @@ public class ToDo {
     private int id;
     private String username;
     private String description;
-    private LocalDate localDate;
+    private LocalDate targetDate;
     private boolean done;
 
-    public ToDo(int id, String username, String description, LocalDate localDate, boolean done) {
+    public ToDo(int id, String username, String description, LocalDate targetDate, boolean done) {
         this.id = id;
         this.username = username;
         this.description = description;
-        this.localDate = localDate;
+        this.targetDate = targetDate;
         this.done = done;
     }
 
@@ -29,8 +29,8 @@ public class ToDo {
         return description;
     }
 
-    public LocalDate getLocalDate() {
-        return localDate;
+    public LocalDate getTargetDate() {
+        return targetDate;
     }
 
     public boolean isDone() {
@@ -49,8 +49,8 @@ public class ToDo {
         this.description = description;
     }
 
-    public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
+    public void setTargetDate(LocalDate targetDate) {
+        this.targetDate = targetDate;
     }
 
     public void setDone(boolean done) {
@@ -63,7 +63,7 @@ public class ToDo {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", description='" + description + '\'' +
-                ", localDate=" + localDate +
+                ", targetDate=" + targetDate +
                 ", done=" + done +
                 '}';
     }
