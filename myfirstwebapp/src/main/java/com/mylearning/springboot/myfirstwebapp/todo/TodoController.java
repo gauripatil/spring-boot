@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -26,12 +27,15 @@ public class TodoController {
 
     @RequestMapping(value="add-todo", method= RequestMethod.GET)
     public String showToDo(ModelMap modelMap) {
+        String username = (String) modelMap.get("username");
+        ToDo todo = new ToDo(0, username, "", LocalDate.now().plusMonths(1), false);
+        modelMap.put("todo", todo);
         return "todo";
     }
 
     @RequestMapping(value="add-todo", method= RequestMethod.POST)
-    public String addToDo( @RequestParam String description, ModelMap modelMap) {
-        this.toDoService.addTodo((String) modelMap.get("username"), description);
+    public String addToDo(ModelMap modelMap, ToDo todo) {
+        this.toDoService.addTodo((String) modelMap.get("username"), todo.getDescription());
         return "redirect:list-todos";
     }
 }
