@@ -28,7 +28,7 @@ public class TodoController {
     @RequestMapping(value="add-todo", method= RequestMethod.GET)
     public String showToDo(ModelMap modelMap) {
         String username = (String) modelMap.get("username");
-        ToDo todo = new ToDo(0, username, "", LocalDate.now().plusMonths(1), false);
+        ToDo todo = new ToDo(0, username, "Default Description", LocalDate.now().plusMonths(1), false);
         modelMap.put("todo", todo);
         return "todo";
     }
