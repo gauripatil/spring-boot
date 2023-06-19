@@ -32,4 +32,15 @@ public class ToDoService {
         Predicate<? super ToDo> predicate = toDo -> toDo.getId() == id ;
         todos.removeIf(predicate);
     }
+
+    public ToDo getTodo(int id) {
+        Predicate<? super ToDo> predicate = toDo -> toDo.getId() == id ;
+        return todos.stream().filter(predicate).findFirst().get();
+    }
+    public void updateById(int id) {
+        Predicate<? super ToDo> predicate = toDo -> toDo.getId() == id ;
+        return todos.stream().filter(predicate).findFirst().set;
+        todos.removeIf(predicate);
+
+    }
 }
