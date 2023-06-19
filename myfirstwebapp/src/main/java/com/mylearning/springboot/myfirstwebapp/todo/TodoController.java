@@ -1,7 +1,9 @@
 package com.mylearning.springboot.myfirstwebapp.todo;
 
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -47,9 +49,25 @@ public class TodoController {
 
 
     @RequestMapping(value="update-todo", method = RequestMethod.GET)
-    public String updateTodo(@RequestParam int id, ModelMap modelMap) {
-        ToDo todo = (ToDo) this.toDoService.getTodo(id);
+    public String showUpdateTodoPage(@RequestParam int id, ModelMap modelMap) {
+        ToDo todo = (ToDo) this.toDoService.findById(id);
         modelMap.put("todo", todo);
         return "todo";
+    }
+
+
+    @RequestMapping(value="update-todo", method= RequestMethod.POST)
+    public String updateToDo(ModelMap modelMap, @Valid ToDo todo, BindingResult result) {
+
+
+        if(result.hasErrors()) {
+            return "todo";
+        }
+
+        String username = (String)modelMap.get("name");
+        todo.setUsername(username);
+        modelMap.put("todo", todo);
+        this.toDoService.updateToDo(todo);
+        return "redirect:list-todos";
     }
 }
