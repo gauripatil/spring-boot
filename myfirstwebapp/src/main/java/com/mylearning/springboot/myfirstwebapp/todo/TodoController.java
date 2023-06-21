@@ -74,7 +74,6 @@ public class TodoController {
 
         String username = (String)modelMap.get("name");
         todo.setUsername(username);
-        modelMap.put("todo", todo);
         this.toDoService.updateToDo(todo);
         return "redirect:list-todos";
     }
