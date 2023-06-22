@@ -26,7 +26,7 @@ public class ToDoService {
     }
 
     public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
-        todos.add(new ToDo(++todosCount, username, description, LocalDate.now(), false));
+        todos.add(new ToDo(++todosCount, username, description, targetDate, false));
     }
 
     public void deleteById(int id) {
