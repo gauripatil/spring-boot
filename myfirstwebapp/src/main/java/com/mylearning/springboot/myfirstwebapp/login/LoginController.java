@@ -16,7 +16,7 @@ public class LoginController {
     // /src/main/META-INF/resources/WEB-INF/jsp/login.jsp
     @RequestMapping(value="/", method= RequestMethod.GET)
     public String goToWelcomePage(ModelMap model) {
-        model.put("name", "Gauri");
+        model.put("name", "gauri");
         return "welcome";
     }
 

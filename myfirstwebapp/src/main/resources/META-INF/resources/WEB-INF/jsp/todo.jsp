@@ -19,8 +19,8 @@
                 <form:errors path="targetDate" cssClass="text-warning"/>
             </fieldset>
 
-            <form:input type="hidden" path="id" required="required"/>
-            <form:input type="hidden" path="done" required="required"/>
+            <form:input type="hidden" path="id"/>
+            <form:input type="hidden" path="done" />
             <input class="btn btn-success" type="submit"/>
         </form:form>
     </div>
