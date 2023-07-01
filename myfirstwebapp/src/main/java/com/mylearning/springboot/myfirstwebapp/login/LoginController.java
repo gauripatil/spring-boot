@@ -9,7 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@SessionAttributes("yourName")
+@SessionAttributes("name")
 public class LoginController {
 
     private Logger logger;
