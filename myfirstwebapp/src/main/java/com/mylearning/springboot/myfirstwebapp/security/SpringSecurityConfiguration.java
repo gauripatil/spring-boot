@@ -13,21 +13,28 @@ import java.util.function.Function;
 
 @Configuration
 public class SpringSecurityConfiguration {
+    private String username;
+    private String password;
     // LDAP OR Database
     // In memory
 
     @Bean
     public InMemoryUserDetailsManager createUserDetailsManager() {
+        UserDetails userDetails1 = getUserDetails("gauri", "admin");
+        UserDetails userDetails2 = getUserDetails("gauripatil", "admin123");
+        return new InMemoryUserDetailsManager(userDetails1, userDetails2);
+    }
+
+    private UserDetails getUserDetails(String username, String password) {
         Function<String, String> passwordEncoder =
-                                    input -> passwordEncoder().encode(input);
+                input -> passwordEncoder().encode(input);
         UserDetails userDetails = User.builder()
                                     .passwordEncoder(passwordEncoder)
-                                    .username("gauri")
-                                    .password("admin")
+                                    .username(username)
+                                    .password(password)
                                     .roles("USER", "ADMIN")
                                     .build();
-
-        return new InMemoryUserDetailsManager(userDetails);
+        return userDetails;
     }
 
     @Bean
