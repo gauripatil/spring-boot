@@ -1,0 +1,11 @@
+insert into course (id, name, author)
+values (1, 'Learn AWS', 'Gauri');
+
+insert into course (id, name, author)
+values (2, 'Learn Java', 'Gauri');
+
+Select * from course;
+
+delete from course where id=1;
+
+Select * from course;
