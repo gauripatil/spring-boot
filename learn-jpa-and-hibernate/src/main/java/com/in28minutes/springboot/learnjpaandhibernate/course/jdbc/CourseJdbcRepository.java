@@ -24,7 +24,7 @@ public class CourseJdbcRepository {
         springJdbcTemplate.update(INSERT_QUERY, course.getId(), course.getName(), course.getAuthor());
     }
 
-    public void delete(Course course) {
-        springJdbcTemplate.update(DELETE_QUERY, course.getId());
+    public void deleteById(int id) {
+        springJdbcTemplate.update(DELETE_QUERY, id);
     }
 }
