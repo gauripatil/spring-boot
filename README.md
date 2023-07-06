@@ -138,4 +138,11 @@
 # Validation with Spring Boot
 ![ValidationWithSpringBoot](https://github.com/gauripatil/spring-boot/assets/3206551/630dadc1-2f47-4c64-a611-27d0ae5d7c01)
 
+# JDBC - Spring JDBC - JPA - Spring JPA
+![Screen Shot 2023-07-05 at 3 40 45 PM](https://github.com/gauripatil/spring-boot/assets/3206551/88468847-2de2-4fe3-b3ec-b0f34f402c95)
+
+
+# Hibernate vs JPA
+![Screen Shot 2023-07-07 at 12 58 59 AM](https://github.com/gauripatil/spring-boot/assets/3206551/4a1f1e76-6e36-406c-8f99-1a486749a6fe)
+
 	
