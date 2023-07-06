@@ -36,5 +36,11 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {
         repository.deleteById(1);
         System.out.println(repository.findById(2));
         System.out.println(repository.findById(3));
+
+        System.out.println(repository.findByAuthor("Gauri"));
+        System.out.println(repository.findByAuthor(""));
+
+        System.out.println(repository.findByName("Learn AWS - Spring Data Jpa!!"));
+        System.out.println(repository.findByName("Learn React - Spring Data Jpa!!"));
     }
 }
