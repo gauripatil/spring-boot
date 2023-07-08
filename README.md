@@ -145,4 +145,16 @@
 # Hibernate vs JPA
 ![Screen Shot 2023-07-07 at 12 58 59 AM](https://github.com/gauripatil/spring-boot/assets/3206551/4a1f1e76-6e36-406c-8f99-1a486749a6fe)
 
-	
+# JDBC vs Spring JDBC vs JPA vs Spring JPA
+![Screen Shot 2023-07-09 at 2 25 21 AM](https://github.com/gauripatil/spring-boot/assets/3206551/3531c809-518f-4f2a-b1ae-c4a95b6afcc0)
+
+
+# JDBC to Spring JDBC
+![Screen Shot 2023-07-09 at 2 22 10 AM](https://github.com/gauripatil/spring-boot/assets/3206551/dbe1ab9b-bea4-4d1e-be85-670a6e494966)
+![Screen Shot 2023-07-09 at 2 22 47 AM](https://github.com/gauripatil/spring-boot/assets/3206551/f5a09ef0-69e2-493f-a996-80823b9b4761)
+
+# JPA
+![Screen Shot 2023-07-09 at 2 23 56 AM](https://github.com/gauripatil/spring-boot/assets/3206551/a0cca27f-61d2-48a6-9713-3bfeaf6ca641)
+
+# Spring JPA
+![Screen Shot 2023-07-09 at 2 24 56 AM](https://github.com/gauripatil/spring-boot/assets/3206551/abd0cb43-b41f-439a-97f0-3458496c6eb2)
