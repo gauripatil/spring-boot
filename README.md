@@ -8,7 +8,7 @@
  			1.4 Spring Boot DevTools
  		2. Be PRODUCTION READY
  			2.1 Logging
- 			2.2 Different Configuration for Different Environments
+ 			2.2 Different Configurations for Different Environments
  				2.2.1 Profiles, ConfigurationProperties
  			2.3 Monitoring (Spring Boot Actuator)
  
@@ -18,7 +18,7 @@
  		1.2 Write Unit tests - I need Spring Test, Mockito, JUnit
  	2. How can I group them and make it easy to build web applications?
  		2.1 Starters - Convenient dependency descriptors for diff features.
- 	3. Spring Boot provides variety of starter projects:
+ 	3. Spring Boot provides a variety of starter projects:
  		3.1 Web Application & REST API - Spring Boot Starter Web (Spring-webmvc, spring-web,
  			spring-boot-starter-tomcat, spring-boot-starter-json)
  		3.2 Unit Tests - Spring Boot Starter Test
@@ -33,7 +33,7 @@
  		1. Auto Configuration: Automated configuration for your app
  			1. Decided based on
  				1. which frameworks are in classpath
- 				2. What is existing configuration(Annotations)
+ 				2. What is the existing configuration(Annotations)
 	3. Example - Spring Boot Starter Web
  		1. Dispatcher servlet(DispatcherServeletAutoConfiguration)
  		2. Embedded Servlet Container - Tomcat is default (EmbeddedWebServerFactoryCustomizerAutoConfiguration)
@@ -50,8 +50,8 @@
  	2. Different environment needs different configuration -
  		1. Different databases
  		2. Different Web Services
- 	3. How can you provide different configuration for different environment:
- 		1. Profiles: Environment specific configuration
+ 	3. How can you provide different configurations for different environments:
+ 		1. Profiles: Environment-specific configuration
  	4. Log levels:
  		1. trace
  		2. debug
@@ -65,7 +65,7 @@
  	1. Create Service with @ConfigurationProperties
  	2. To test create simple controller and map to url
  	3. Put all the configurations in application properties for - dev, prod, default etc
- 	4. Hit endpoint and see the response
+ 	4. Hit the endpoint and see the response
 	
 # Simplify Deployment with Spring Boot Embedded Servers
 ### OLD WAY
@@ -135,8 +135,10 @@
 # Session VS Request Scope
 ![SessionVsRequestScope](https://github.com/gauripatil/spring-boot/assets/3206551/91f330c0-d49c-4d11-84ad-553bb27f5bdf)
 
+
 # Validation with Spring Boot
 ![ValidationWithSpringBoot](https://github.com/gauripatil/spring-boot/assets/3206551/630dadc1-2f47-4c64-a611-27d0ae5d7c01)
+
 
 # JDBC - Spring JDBC - JPA - Spring JPA
 ![Screen Shot 2023-07-05 at 3 40 45 PM](https://github.com/gauripatil/spring-boot/assets/3206551/88468847-2de2-4fe3-b3ec-b0f34f402c95)
@@ -145,4 +147,19 @@
 # Hibernate vs JPA
 ![Screen Shot 2023-07-07 at 12 58 59 AM](https://github.com/gauripatil/spring-boot/assets/3206551/4a1f1e76-6e36-406c-8f99-1a486749a6fe)
 
-	
+
+# JDBC vs Spring JDBC vs JPA vs Spring JPA
+![Screen Shot 2023-07-09 at 2 25 21 AM](https://github.com/gauripatil/spring-boot/assets/3206551/3531c809-518f-4f2a-b1ae-c4a95b6afcc0)
+
+
+# JDBC to Spring JDBC
+![Screen Shot 2023-07-09 at 2 22 10 AM](https://github.com/gauripatil/spring-boot/assets/3206551/dbe1ab9b-bea4-4d1e-be85-670a6e494966)
+![Screen Shot 2023-07-09 at 2 22 47 AM](https://github.com/gauripatil/spring-boot/assets/3206551/f5a09ef0-69e2-493f-a996-80823b9b4761)
+
+
+# JPA
+![Screen Shot 2023-07-09 at 2 23 56 AM](https://github.com/gauripatil/spring-boot/assets/3206551/a0cca27f-61d2-48a6-9713-3bfeaf6ca641)
+
+
+# Spring JPA
+![Screen Shot 2023-07-09 at 2 24 56 AM](https://github.com/gauripatil/spring-boot/assets/3206551/abd0cb43-b41f-439a-97f0-3458496c6eb2)
