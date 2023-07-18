@@ -17,12 +17,10 @@ import java.util.List;
 @SessionAttributes("name")
 public class TodoControllerJpa {
 
-    private ToDoService toDoService;
     private ToDoRepository toDoRepository;
 
-    public TodoControllerJpa(ToDoService toDoService, ToDoRepository toDoRepository) {
+    public TodoControllerJpa(ToDoRepository toDoRepository) {
         super();
-        this.toDoService = toDoService;
         this.toDoRepository = toDoRepository;
     }
 
@@ -31,7 +29,6 @@ public class TodoControllerJpa {
         String username = getLoggedinUsername();
         toDoRepository.findByUsername(username);
 //        List<ToDo> allTodos = this.toDoService.getAllTodos(username);
-
         List<ToDo> allTodos = toDoRepository.findByUsername(username);
         modelMap.put("todos", allTodos);
         return "listTodos";
@@ -55,20 +52,25 @@ public class TodoControllerJpa {
         }
 
         String username = getLoggedinUsername();
-        this.toDoService.addTodo(username, todo.getDescription(), todo.getTargetDate(), false);
+        todo.setUsername(username);
+        // JPA method to save - add todo
+        toDoRepository.save(todo);
+//        this.toDoService.addTodo(username, todo.getDescription(), todo.getTargetDate(), todo.isDone());
         return "redirect:list-todos";
     }
 
     @RequestMapping(value="delete-todo", method = RequestMethod.GET)
     public String deleteTodo(@RequestParam int id) {
-        this.toDoService.deleteById(id);
+//        this.toDoService.deleteById(id);
+        toDoRepository.deleteById(id);
         return "redirect:list-todos";
     }
 
 
     @RequestMapping(value="update-todo", method = RequestMethod.GET)
     public String showUpdateTodoPage(@RequestParam int id, ModelMap modelMap) {
-        ToDo todo = (ToDo) this.toDoService.findById(id);
+//        ToDo todo = (ToDo) this.toDoService.findById(id);
+        ToDo todo = this.toDoRepository.findById(id).get();
         modelMap.put("todo", todo);
         return "todo";
     }
@@ -84,7 +86,8 @@ public class TodoControllerJpa {
 
         String username = getLoggedinUsername();
         todo.setUsername(username);
-        this.toDoService.updateToDo(todo);
+//        this.toDoService.updateToDo(todo);
+        this.toDoRepository.save(todo);
         return "redirect:list-todos";
     }
 
