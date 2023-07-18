@@ -6,26 +6,33 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
-import java.time.LocalDate;
 import java.util.List;
 
-//@Controller
+@Controller
 @SessionAttributes("name")
-public class TodoController {
+public class TodoControllerJpa {
 
     private ToDoService toDoService;
+    private ToDoRepository toDoRepository;
 
-    public TodoController(ToDoService toDoService) {
+    public TodoControllerJpa(ToDoService toDoService, ToDoRepository toDoRepository) {
         super();
         this.toDoService = toDoService;
+        this.toDoRepository = toDoRepository;
     }
 
     @RequestMapping("list-todos")
     public String listAllTodos(ModelMap modelMap) {
         String username = getLoggedinUsername();
-        List<ToDo> allTodos = this.toDoService.getAllTodos(username);
+        toDoRepository.findByUsername(username);
+//        List<ToDo> allTodos = this.toDoService.getAllTodos(username);
+
+        List<ToDo> allTodos = toDoRepository.findByUsername(username);
         modelMap.put("todos", allTodos);
         return "listTodos";
     }
