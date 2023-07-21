@@ -163,3 +163,6 @@
 
 # Spring JPA
 ![Screen Shot 2023-07-09 at 2 24 56 AM](https://github.com/gauripatil/spring-boot/assets/3206551/abd0cb43-b41f-439a-97f0-3458496c6eb2)
+
+# Spring Boot Auto configuration magic - Data JPA
+![Screen Shot 2023-07-20 at 10 54 39 PM](https://github.com/gauripatil/spring-boot/assets/3206551/01eceb97-11a3-4e6f-9f49-863c37a25b93)
