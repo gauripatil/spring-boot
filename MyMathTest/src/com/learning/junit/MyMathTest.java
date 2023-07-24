@@ -3,14 +3,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MyMathTest {
+    MyMath myMath = new MyMath();
+    @Test
+     void calculateSUm_ThreeMemberArray() {
+        assertEquals(6, myMath.calculateSum(new int[]{1,2,3}));
+    }
 
     @Test
-     void test() {
-        MyMath myMath = new MyMath();
-        int[] array = {1,2,3};
-        int result  = myMath.calculateSum(array);
-        System.out.println(result);
-        int expectedResult = 6;
-        assertEquals(result, expectedResult);
+    void calculateSUm_ZeroLengthArray() {
+        assertEquals(0, myMath.calculateSum(new int[]{}));
     }
 }
