@@ -166,3 +166,7 @@
 
 # Spring Boot Auto configuration magic - Data JPA
 ![Screen Shot 2023-07-20 at 10 54 39 PM](https://github.com/gauripatil/spring-boot/assets/3206551/01eceb97-11a3-4e6f-9f49-863c37a25b93)
+
+# Mockito Intro
+
+\![Screen Shot 2023-07-25 at 9 02 57 PM](https://github.com/gauripatil/spring-boot/assets/3206551/9bbf5929-c77e-46be-8e68-e7d31b573a28)
