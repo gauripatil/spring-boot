@@ -8,6 +8,16 @@ class SomeBusinessImplTest {
 
     @Test
     void findGreatestFromAllData() {
-        fail("Not yet implemented");
+        DataServiceStub dataServiceStub = new DataServiceStub();
+        SomeBusinessImpl businessImpl = new SomeBusinessImpl(dataServiceStub);
+        businessImpl.findGreatestFromAllData();
+    }
+}
+
+class DataServiceStub implements DataService {
+
+    @Override
+    public int[] retrieveAllData() {
+        return new int[]{25, 15, 5};
     }
 }
