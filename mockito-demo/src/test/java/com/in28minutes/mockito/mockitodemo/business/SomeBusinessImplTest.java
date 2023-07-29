@@ -7,10 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class SomeBusinessImplTest {
 
     @Test
-    void findGreatestFromAllData() {
+    void findGreatestFromAllData_basic() {
         DataServiceStub dataServiceStub = new DataServiceStub();
         SomeBusinessImpl businessImpl = new SomeBusinessImpl(dataServiceStub);
-        businessImpl.findGreatestFromAllData();
+        int result = businessImpl.findGreatestFromAllData();
+        assertEquals(25, result);
     }
 }
 
