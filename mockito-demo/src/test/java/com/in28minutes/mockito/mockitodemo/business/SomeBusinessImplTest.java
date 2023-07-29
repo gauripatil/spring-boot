@@ -15,7 +15,7 @@ class SomeBusinessImplTest {
     }
 
     @Test
-    void findGreatestFromAllData_one_parameter() {
+    void findGreatestFromAllData_one_value() {
         DataServiceStub2 dataServiceStub2 = new DataServiceStub2();
         SomeBusinessImpl businessImpl = new SomeBusinessImpl(dataServiceStub2);
         int result = businessImpl.findGreatestFromAllData();
