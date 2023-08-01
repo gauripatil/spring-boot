@@ -169,4 +169,4 @@
 
 # Mockito Intro
 
-\![Screen Shot 2023-07-25 at 9 02 57 PM](https://github.com/gauripatil/spring-boot/assets/3206551/9bbf5929-c77e-46be-8e68-e7d31b573a28)
+![Screen Shot 2023-07-25 at 9 02 57 PM](https://github.com/gauripatil/spring-boot/assets/3206551/9bbf5929-c77e-46be-8e68-e7d31b573a28)
