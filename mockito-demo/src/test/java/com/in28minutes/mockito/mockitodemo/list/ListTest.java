@@ -25,4 +25,12 @@ public class ListTest {
         assertEquals(2, listMock.size());
         assertEquals(2, listMock.size());
     }
+
+    @Test
+    void parameters() {
+        List listMock = mock(List.class);
+        when(listMock.get(0)).thenReturn("Something");
+        assertEquals("Something", listMock.get(0));
+        assertEquals(null, listMock.get(1));
+    }
 }
