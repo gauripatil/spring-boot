@@ -1,6 +1,7 @@
 package com.in28minutes.mockito.mockitodemo.list;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.util.List;
 
@@ -27,10 +28,20 @@ public class ListTest {
     }
 
     @Test
-    void parameters() {
+    void specificParameters() {
         List listMock = mock(List.class);
         when(listMock.get(0)).thenReturn("Something");
         assertEquals("Something", listMock.get(0));
         assertEquals(null, listMock.get(1));
     }
+
+    @Test
+    void genericParameters() {
+        List listMock = mock(List.class);
+        when(listMock.get(Mockito.anyInt())).thenReturn("SomeOtherThing");
+        assertEquals("SomeOtherThing", listMock.get(0));
+        assertEquals("SomeOtherThing", listMock.get(1));
+    }
+
+
 }
