@@ -33,4 +33,8 @@ public class SurveyService {
         surveys.add(survey);
 
     }
+
+    public List<Survey> retrieveAllSurveys() {
+        return surveys;
+    }
 }
