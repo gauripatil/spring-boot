@@ -46,4 +46,11 @@ public class SurveyService {
         if(optionalSurvey.isEmpty()) return null;
         return optionalSurvey.get();
     }
+
+    public List<Question> getAllQuestions(String surveyId) {
+        Survey survey = getSurveyById(surveyId);
+        if(survey == null) return null;
+
+        return survey.getQuestions();
+    }
 }
