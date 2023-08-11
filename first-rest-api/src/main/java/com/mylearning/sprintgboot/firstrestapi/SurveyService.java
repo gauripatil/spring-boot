@@ -53,4 +53,12 @@ public class SurveyService {
 
         return survey.getQuestions();
     }
+
+    public Question getQuestionById(String surveyId, String questionsId) {
+        List<Question> questions = getAllQuestions(surveyId);
+        Predicate<? super Question> predicate = question -> question.getId().equalsIgnoreCase(questionsId);
+        Optional<Question> optionalQuestion = questions.stream().filter(predicate).findFirst();
+        if(optionalQuestion.isEmpty()) return null;
+        return optionalQuestion.get();
+    }
 }
