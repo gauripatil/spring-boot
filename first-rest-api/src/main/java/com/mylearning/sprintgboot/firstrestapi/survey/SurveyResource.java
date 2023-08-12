@@ -35,6 +35,7 @@ public class SurveyResource {
         return survey;
     }
 
+    // Get all questions survey question
     // /surveys/survey1/questions => all questions
     @RequestMapping("/surveys/{surveyId}/questions")
     public List<Question> getAllSurveyQuestions(@PathVariable String surveyId) {
@@ -45,6 +46,8 @@ public class SurveyResource {
         return questions;
     }
 
+    // Get Specific survey question
+    // /surveys/survey1/questions/question1 => specific question
     @RequestMapping("/surveys/{surveyId}/questions/{questionsId}")
     public Question retrieveQuestionById(@PathVariable String surveyId, @PathVariable String questionsId) {
         Question questions = surveyService.getQuestionById(surveyId, questionsId);
