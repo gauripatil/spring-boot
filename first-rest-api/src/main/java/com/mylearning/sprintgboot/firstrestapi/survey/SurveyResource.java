@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -55,5 +56,23 @@ public class SurveyResource {
         if(questions==null)
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         return questions;
+    }
+
+    //
+    /*
+    * {
+    "id": "SOME_ID",
+    "description": "Your Favorite Cloud Platform",
+    "options": [
+        "AWS",
+        "Azure",
+        "Google Cloud",
+        "Oracle Cloud"
+    ],
+    "correctAnswer": "Google Cloud"
+}   */
+    @RequestMapping(value="/surveys/{surveyId}/questions", method = RequestMethod.POST)
+    public void addNewSurveyQuestion(@PathVariable String surveyId) {
+
     }
 }
