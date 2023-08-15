@@ -2,11 +2,7 @@ package com.mylearning.sprintgboot.firstrestapi.survey;
 
 import com.mylearning.sprintgboot.firstrestapi.SurveyService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
@@ -72,8 +68,12 @@ public class SurveyResource {
     "correctAnswer": "Google Cloud"
 }   */
     @RequestMapping(value="/surveys/{surveyId}/questions", method = RequestMethod.POST)
-    public void addNewSurveyQuestion(@PathVariable String surveyId) {
-        surveyService.addQuestion(Questions question);
+    public List<Question> addNewSurveyQuestion(@PathVariable String surveyId, @RequestBody Question question) {
+        List<Question> questions = surveyService.addNewSurveyQuestion(surveyId, question);
+        if(null == questions)
+            throw  new ResponseStatusException(HttpStatus.NOT_FOUND);
+        return questions;
+//        surveyService.addQuestion(Questions question);
 
     }
 }

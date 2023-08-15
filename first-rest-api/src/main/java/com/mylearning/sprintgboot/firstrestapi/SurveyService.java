@@ -61,4 +61,12 @@ public class SurveyService {
         if(optionalQuestion.isEmpty()) return null;
         return optionalQuestion.get();
     }
+
+    public List<Question> addNewSurveyQuestion(String surveyId, Question question) {
+        Survey survey = this.getSurveyById(surveyId);
+        if(null == survey) return null;
+
+        survey.getQuestions().add(question);
+        return survey.getQuestions();
+    }
 }
