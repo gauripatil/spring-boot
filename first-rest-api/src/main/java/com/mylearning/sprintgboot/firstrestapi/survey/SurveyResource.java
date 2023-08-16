@@ -1,4 +1,5 @@
-package com.mylearning.sprintgboot.firstrestapi.survey;
+
+ com.mylearning.sprintgboot.firstrestapi.survey;
 
 import com.mylearning.sprintgboot.firstrestapi.SurveyService;
 import org.springframework.http.HttpStatus;
@@ -67,6 +68,7 @@ public class SurveyResource {
     ],
     "correctAnswer": "Google Cloud"
 }   */
+// add question to specific survey 
     @RequestMapping(value="/surveys/{surveyId}/questions", method = RequestMethod.POST)
     public List<Question> addNewSurveyQuestion(@PathVariable String surveyId, @RequestBody Question question) {
         List<Question> questions = surveyService.addNewSurveyQuestion(surveyId, question);
