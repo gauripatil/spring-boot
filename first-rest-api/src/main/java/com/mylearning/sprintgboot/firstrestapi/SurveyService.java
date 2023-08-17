@@ -4,6 +4,8 @@ import com.mylearning.sprintgboot.firstrestapi.survey.Question;
 import com.mylearning.sprintgboot.firstrestapi.survey.Survey;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -62,11 +64,20 @@ public class SurveyService {
         return optionalQuestion.get();
     }
 
-    public List<Question> addNewSurveyQuestion(String surveyId, Question question) {
+    public String addNewSurveyQuestion(String surveyId, Question question) {
         Survey survey = this.getSurveyById(surveyId);
         if(null == survey) return null;
 
+        // Generate random Id for question
+        question.setId(generateRandomId());
+
         survey.getQuestions().add(question);
-        return survey.getQuestions();
+        return question.getId().toString();
+    }
+
+    private static String generateRandomId() {
+        SecureRandom secureRandom = new SecureRandom();
+        String randomString = new BigInteger(32, secureRandom).toString();
+        return randomString;
     }
 }

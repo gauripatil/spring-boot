@@ -1,11 +1,14 @@
 
- com.mylearning.sprintgboot.firstrestapi.survey;
+package com.mylearning.sprintgboot.firstrestapi.survey;
 
 import com.mylearning.sprintgboot.firstrestapi.SurveyService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -55,8 +58,9 @@ public class SurveyResource {
         return questions;
     }
 
-    //
+
     /*
+    * add question to specific survey
     * {
     "id": "SOME_ID",
     "description": "Your Favorite Cloud Platform",
@@ -67,15 +71,14 @@ public class SurveyResource {
         "Oracle Cloud"
     ],
     "correctAnswer": "Google Cloud"
+    }
 }   */
-// add question to specific survey 
-    @RequestMapping(value="/surveys/{surveyId}/questions", method = RequestMethod.POST)
-    public List<Question> addNewSurveyQuestion(@PathVariable String surveyId, @RequestBody Question question) {
-        List<Question> questions = surveyService.addNewSurveyQuestion(surveyId, question);
-        if(null == questions)
-            throw  new ResponseStatusException(HttpStatus.NOT_FOUND);
-        return questions;
-//        surveyService.addQuestion(Questions question);
 
+    @RequestMapping(value="/surveys/{surveyId}/questions", method = RequestMethod.POST)
+    public ResponseEntity<Object> addNewSurveyQuestion(@PathVariable String surveyId, @RequestBody Question question) {
+        String questionId = surveyService.addNewSurveyQuestion(surveyId, question);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{questionId}").buildAndExpand(questionId).toUri();
+        return ResponseEntity.created(location).build();
     }
 }

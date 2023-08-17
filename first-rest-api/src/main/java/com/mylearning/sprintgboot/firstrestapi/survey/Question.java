@@ -35,6 +35,10 @@ public class Question {
         return option;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Question{" +
