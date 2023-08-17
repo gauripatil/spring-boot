@@ -81,4 +81,14 @@ public class SurveyResource {
                 .path("/{questionId}").buildAndExpand(questionId).toUri();
         return ResponseEntity.created(location).build();
     }
+
+    @RequestMapping(value="/surveys/{surveyId}/questions/{questionsId}", method = RequestMethod.DELETE)
+    public String deleteSurveyQuestion(@PathVariable String surveyId, @PathVariable String questionsId) {
+        boolean removed = surveyService.deleteSurveyQuestion(surveyId, questionsId);
+
+        if(!removed) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return questionsId;
+    }
 }

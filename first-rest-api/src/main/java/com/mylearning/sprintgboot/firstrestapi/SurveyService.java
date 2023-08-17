@@ -80,4 +80,10 @@ public class SurveyService {
         String randomString = new BigInteger(32, secureRandom).toString();
         return randomString;
     }
+
+    public boolean deleteSurveyQuestion(String surveyId, String questionsId) {
+        List<Question> surveyQuestions =  getAllQuestions(surveyId);
+        boolean removed = surveyQuestions.removeIf(question -> question.getId().equalsIgnoreCase(questionsId));
+        return removed;
+    }
 }
