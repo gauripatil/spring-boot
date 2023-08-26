@@ -22,6 +22,10 @@ public class SurveyResourceIT {
     void retrieveQuestionById_basicScenario() {
         ResponseEntity<String> responseEntity = template.getForEntity(SPECIFIC_URL_STR, String.class);
         System.out.println(responseEntity.getBody());
+        // {"id":"Question1","description":"Most Popular Cloud Platform Today","correctAnswer":"AWS","option":["AWS","Azure","Google Cloud","Oracle Cloud"]}
+
         System.out.println(responseEntity.getHeaders());
+        // [Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 26 Aug 2023 16:16:43 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]
+
     }
 }
