@@ -50,21 +50,21 @@ public class SurveyResourceIT {
     void getAllSurveyQuestions_basicScenario() throws JSONException {
         ResponseEntity<String> responseEntity = template.getForEntity(ALL_QUESTIONS_URL_STR, String.class);
         System.out.println(responseEntity.getBody());
-        String expectedResponseStr = """
-                        [
-                             {
-                                 "id": "Question1",
-                             },
-                             {
-                                 "id": "Question2",
-                             },
-                             {
-                                 "id": "Question3",
-                             }
-                         ]
+        String expectedResponseStr =
+               """
+                    [
+                         {
+                             "id": "Question1"
+                         },
+                         {
+                             "id": "Question2"
+                         },
+                         {
+                             "id": "Question3"
+                         }
+                    ]
                          
-                """;
-        //
+               """;
 
         System.out.println(responseEntity.getHeaders());
         // [Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 26 Aug 2023 16:16:43 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]
