@@ -8,12 +8,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class SurveyResourceIT {
 
     // http://localhost:8080/surveys/survey1/questions/Question1
-
-
     private static String SPECIFIC_URL_STR = "/surveys/survey1/questions/Question1";
     @Autowired
     TestRestTemplate template;
@@ -35,7 +36,10 @@ public class SurveyResourceIT {
         System.out.println(responseEntity.getHeaders());
         // [Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 26 Aug 2023 16:16:43 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]
 
+        assertTrue(responseEntity.getStatusCode().is2xxSuccessful());
+        assertEquals("application/json", responseEntity.getHeaders().get("Content-Type").get(0));
         JSONAssert.assertEquals(expectedResponseStr, responseEntity.getBody(), false);
+
 
 
 
