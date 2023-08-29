@@ -6,6 +6,7 @@ import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,6 +18,7 @@ public class SurveyResourceIT {
     // http://localhost:8080/surveys/survey1/questions/Question1
     private static String SPECIFIC_URL_STR = "/surveys/survey1/questions/Question1";
     private static String ALL_QUESTIONS_URL_STR = "/surveys/survey1/questions";
+    private static String ADD_NEW_QUESTION_STR = "/surveys/Survey1/questions";
     @Autowired
     TestRestTemplate template;
 
@@ -72,7 +74,31 @@ public class SurveyResourceIT {
         assertTrue(responseEntity.getStatusCode().is2xxSuccessful());
         assertEquals("application/json", responseEntity.getHeaders().get("Content-Type").get(0));
         JSONAssert.assertEquals(expectedResponseStr, responseEntity.getBody(), false);
+    }
+    @Test
+    void addNewSurveyQuestion_basicScenario() throws JSONException {
+        ///surveys/Survey1/questions
+        String body =
+                """
+                    {
+                        "description": "Most Popular Cloud Platform Today",
+                        "correctAnswer": "AWS123",
+                        "option": [
+                            "AWS123",
+                            "Azure",
+                            "Google Cloud",
+                            "Oracle Cloud"
+                        ]
+                    }
+                            
+                """;
+        // Status 201
+        // Header - Content-Type = application/json
+        //  Location uri - response
 
+        ResponseEntity<String> responseEntity = template.getForEntity(ADD_NEW_QUESTION_STR, String.class);
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.add("Content-Type", "application/json");
 
 
 
