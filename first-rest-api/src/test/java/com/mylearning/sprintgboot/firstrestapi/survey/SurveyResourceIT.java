@@ -6,8 +6,8 @@ import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -99,6 +99,19 @@ public class SurveyResourceIT {
         ResponseEntity<String> responseEntity = template.getForEntity(ADD_NEW_QUESTION_STR, String.class);
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("Content-Type", "application/json");
+
+        HttpEntity<String> httpEntity = new HttpEntity<String>(body, httpHeaders);
+        ResponseEntity<String> exchange =
+                template.exchange(ADD_NEW_QUESTION_STR, HttpMethod.POST, httpEntity, String.class);
+
+
+        System.out.println(exchange.getHeaders());
+        System.out.println(exchange.getBody());
+        //[Location:"http://localhost:49806/surveys/Survey1/questions/1296842013", Content-Length:"0", Date:"Wed, 30 Aug 2023 16:06:48 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]
+        //null
+
+        assertTrue(exchange.getStatusCode().is2xxSuccessful());
+        assertTrue(exchange.getHeaders().get("Location").get(0).contains("/surveys/Survey1/questions/"));
 
 
 
