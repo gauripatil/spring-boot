@@ -111,7 +111,15 @@ public class SurveyResourceIT {
         //null
 
         assertTrue(exchange.getStatusCode().is2xxSuccessful());
-        assertTrue(exchange.getHeaders().get("Location").get(0).contains("/surveys/Survey1/questions/"));
+        String locationHeader = exchange.getHeaders().get("Location").get(0);
+        assertTrue(locationHeader.contains("/surveys/Survey1/questions/"));
+
+        // To fix the side effect of this test, we need to delete recently added question
+        // so that other test cases won`t fail
+
+        // DELETE
+        // locationHeader Header
+        template.delete(locationHeader);
 
 
 
