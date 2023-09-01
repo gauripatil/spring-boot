@@ -117,7 +117,7 @@ public class SurveyResourceIT {
         // To fix the side effect of this test, we need to delete recently added question
         // so that other test cases won`t fail
 
-        // DELETE
+        // DELETE the added question to remove side effect 
         // locationHeader Header
         template.delete(locationHeader);
 
