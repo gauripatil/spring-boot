@@ -60,6 +60,7 @@ public class SurveyResourceTest {
         Question question1 = new Question("Question1",
                 "Most Popular Cloud Platform Today", Arrays.asList(
                 "AWS", "Azure", "Google Cloud", "Oracle Cloud"), "AWS");
+// stubbing survey service 
 
         when(surveyService.getQuestionById("Survey1", "Question1")).thenReturn(question1);
 
