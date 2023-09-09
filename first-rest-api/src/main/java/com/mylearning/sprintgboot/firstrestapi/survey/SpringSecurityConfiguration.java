@@ -1,4 +1,4 @@
-package com.mylearning.sprintgboot.firstrestapi.survey;
+ com.mylearning.sprintgboot.firstrestapi.survey;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -24,7 +24,7 @@ public class SpringSecurityConfiguration {
 	
 	@Bean
 	public InMemoryUserDetailsManager createUserDetailsManager() {
-		
+		// set in memory users
 		UserDetails userDetails1 = createNewUser("gauri", "password");
 		UserDetails userDetails2 = createNewUser("dummyuser", "dummydummy");
 		
