@@ -1,4 +1,4 @@
-package com.mylearning.sprintgboot.firstrestapi.survey;
+package com.mylearning.sprintgboot.firstrestapi.security;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
