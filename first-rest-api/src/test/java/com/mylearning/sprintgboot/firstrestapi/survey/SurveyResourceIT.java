@@ -108,9 +108,12 @@ public class SurveyResourceIT {
         // Header - Content-Type = application/json
         //  Location uri - response
 
-//        ResponseEntity<String> responseEntity = template.getForEntity(ADD_NEW_QUESTION_STR, String.class);
+        // Way 1 - using template.getForEntity
+        // ResponseEntity<String> responseEntity = template.getForEntity(ADD_NEW_QUESTION_STR, String.class);
         HttpHeaders httpHeaders = getHttpHeaders();
         HttpEntity<String> httpEntity = new HttpEntity<String>(body, httpHeaders);
+
+        // Way 2 - using template.exchange
         ResponseEntity<String> exchange =
                 template.exchange(ADD_NEW_QUESTION_STR, HttpMethod.POST, httpEntity, String.class);
 
@@ -130,11 +133,9 @@ public class SurveyResourceIT {
         // DELETE the added question to remove side effect 
         // locationHeader Header
 
-//        template.delete(locationHeader);
+        // template.delete(locationHeader);
 
         template.exchange(locationHeader, HttpMethod.DELETE, httpEntity, String.class);
-
-
     }
 
     private HttpHeaders getHttpHeaders() {
