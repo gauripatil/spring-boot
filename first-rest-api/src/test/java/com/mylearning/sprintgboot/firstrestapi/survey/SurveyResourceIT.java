@@ -33,7 +33,7 @@ public class SurveyResourceIT {
         ResponseEntity<String> responseEntity =
                 template.exchange(SPECIFIC_URL_STR, HttpMethod.GET, httpEntity, String.class);
 
-//        ResponseEntity<String> responseEntity = template.getForEntity(SPECIFIC_URL_STR, String.class);
+        // ResponseEntity<String> responseEntity = template.getForEntity(SPECIFIC_URL_STR, String.class);
         System.out.println(responseEntity.getBody());
         String expectedResponseStr = """
                 {
@@ -61,7 +61,7 @@ public class SurveyResourceIT {
         ResponseEntity<String> responseEntity =
                 template.exchange(ALL_QUESTIONS_URL_STR, HttpMethod.GET, httpEntity, String.class);
 
-//        ResponseEntity<String> responseEntity = template.getForEntity(ALL_QUESTIONS_URL_STR, String.class);
+        // ResponseEntity<String> responseEntity = template.getForEntity(ALL_QUESTIONS_URL_STR, String.class);
         System.out.println(responseEntity.getBody());
 
         String expectedResponseStr =
@@ -133,8 +133,10 @@ public class SurveyResourceIT {
         // DELETE the added question to remove side effect 
         // locationHeader Header
 
+        // Way 1
         // template.delete(locationHeader);
 
+        // Way 2
         template.exchange(locationHeader, HttpMethod.DELETE, httpEntity, String.class);
     }
 
