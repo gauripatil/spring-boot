@@ -9,16 +9,55 @@ public class FP01Functional {
         System.out.println("\nEven Numbers:");
         printEvenNumbersInListFunctional(integers);
 
+        System.out.println("\nEven Numbers Square:");
+        printEvenNumbersSquareInListFunctional(integers);
 
         System.out.println("\nOdd Numbers:");
         printOddNumbersInListFunctional(integers);
 
+        System.out.println("\nCube of Odd Numbers:");
+        printCubeOfOddNumbersInListFunctional(integers);
+
         System.out.println("\nAll Courses : ");
-        List<String> courses = List.of("Spring", "Java", "Spring Boot", "Nodejs", "ExpressJs", "React", "Angular");
+        List<String> courses = List.of("Spring", "Java", "Spring Boot", "Nodejs", "ExpressJs", "React", "Angular", "GCP", "AWS");
         printCoursesList(courses);
+
+        System.out.println("\nCharacters in courses : ");
+        printCharactersInCourses(courses);
 
         System.out.println("\nOnly Spring : ");
         printCoursesListWithSpring(courses);
+
+        System.out.println("\nCourses with at least 4 letters : ");
+        printCoursesListWithAtleastFourLetters(courses);
+
+
+    }
+
+    private static void printCharactersInCourses(List<String> courses) {
+        courses.stream()
+                .map(course -> course + " " + course.length())
+                .forEach(System.out::println);
+    }
+
+    private static void printCubeOfOddNumbersInListFunctional(List<Integer> integers) {
+        integers.stream()
+                .filter(integer -> integer%2==1)
+                .map(integer -> integer * integer * integer)
+                .forEach(System.out::println);
+    }
+
+    private static void printEvenNumbersSquareInListFunctional(List<Integer> integers) {
+        integers.stream()
+                .filter(integer -> integer%2==0)
+                .map(integer -> integer * integer)
+                .forEach(System.out::println);
+    }
+
+    private static void printCoursesListWithAtleastFourLetters(List<String> courses) {
+        courses.stream()
+                .filter(course -> course.length() >= 4)
+                .forEach(System.out::println);
     }
 
     private static void printCoursesListWithSpring(List<String> courses) {
