@@ -16,12 +16,10 @@ public class FP02Functional {
 
 
 //        EXAMPLE 2: Map and Reduce
-
         // Using stream to double each number and then calculate the sum
         int sum = numbers.stream()
                 .map(num -> num * 2)
                 .reduce(0, Integer::sum);
-
         System.out.println("Sum of doubled numbers: " + sum);
 
 
