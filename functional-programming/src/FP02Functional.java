@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class FP02Functional {
     public static void main(String[] args) {
@@ -30,5 +31,62 @@ public class FP02Functional {
         fruits.stream()
                 .sorted()
                 .forEach(System.out::println);
+
+
+        List.of("hello", "world")
+                .stream()
+                .map(String::toUpperCase)
+                .forEach(System.out::println);
+
+// Output:
+// HELLO
+// WORLD
+
+
+        Predicate<Long> isEven = (value) -> value % 2L == 0;
+        List.of(1L, 2L, 3L, 5L, 8L, 13L)
+                .stream()
+                .filter(isEven)
+                .forEach(System.out::println);
+
+// Output:
+// 2
+// 8
+
+        List.of(1L, 2L, 3L, 5L, 8L, 13L)
+                .stream()
+                .filter(Predicate.not(value -> value % 2L == 0))
+                .forEach(System.out::println);
+
+// Output:
+// 1
+// 3
+// 5
+// 13
+
+        // TAKE WHILE
+        List.of(1L, 5L, 7L, 10L, 11L, 12L)
+                .stream()
+                .takeWhile(value -> value % 2 != 0)
+                .forEach(System.out::println);
+
+// Output:
+// 1
+// 5
+// 7
+
+
+// DROP WHILE
+        List.of(1L, 5L, 7L, 10L, 11L, 12L)
+                .stream()
+                .dropWhile(value -> value % 2 != 0)
+                .forEach(System.out::println);
+
+// Output:
+// 10
+// 11
+// 12
+
+
     }
 }
