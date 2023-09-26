@@ -87,6 +87,34 @@ public class FP02Functional {
 // 11
 // 12
 
+        // COUNT
+        int count =
+                Math.toIntExact(List.of(1L, 2L, 3L)
+                        .stream()
+                        .reduce(0L,
+                                (acc, cur) -> acc + 1));
+        System.out.println("Count >> " + count);
+// SUM
+        Long sum1 =
+                List.of(1L, 2L, 3L)
+                        .stream()
+                        .reduce(0L,
+                                (acc, cur) -> acc + cur);
+        System.out.println("Sum >> " + sum1);
+// MIN
+        Long min =
+                List.of(10L, 5L, 11L)
+                        .stream()
+                        .reduce(Long.MAX_VALUE,
+                                (acc, cur) -> acc.compareTo(cur) < 0 ? acc : cur);
+        System.out.println("Min >> " + min);
+// MAX
+        Long max =
+                List.of(10L, 5L, 11L)
+                        .stream()
+                        .reduce(Long.MIN_VALUE,
+                                (acc, cur) -> acc.compareTo(cur) > 0 ? acc : cur);
+        System.out.println("Max >> " + max);
 
     }
 }
