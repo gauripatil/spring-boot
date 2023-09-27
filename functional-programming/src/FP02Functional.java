@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.StringJoiner;
 import java.util.function.Predicate;
+import java.util.stream.Collector;
 
 public class FP02Functional {
     public static void main(String[] args) {
@@ -16,7 +18,7 @@ public class FP02Functional {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 
 
-//        EXAMPLE 2: Map and Reduce
+        // EXAMPLE 2: Map and Reduce
         // Using stream to double each number and then calculate the sum
         int sum = numbers.stream()
                 .map(num -> num * 2)
@@ -38,9 +40,9 @@ public class FP02Functional {
                 .map(String::toUpperCase)
                 .forEach(System.out::println);
 
-// Output:
-// HELLO
-// WORLD
+        // Output:
+        // HELLO
+        // WORLD
 
 
         Predicate<Long> isEven = (value) -> value % 2L == 0;
@@ -49,20 +51,20 @@ public class FP02Functional {
                 .filter(isEven)
                 .forEach(System.out::println);
 
-// Output:
-// 2
-// 8
+        // Output:
+        // 2
+        // 8
 
         List.of(1L, 2L, 3L, 5L, 8L, 13L)
                 .stream()
                 .filter(Predicate.not(value -> value % 2L == 0))
                 .forEach(System.out::println);
 
-// Output:
-// 1
-// 3
-// 5
-// 13
+        // Output:
+        // 1
+        // 3
+        // 5
+        // 13
 
         // TAKE WHILE
         List.of(1L, 5L, 7L, 10L, 11L, 12L)
@@ -70,22 +72,22 @@ public class FP02Functional {
                 .takeWhile(value -> value % 2 != 0)
                 .forEach(System.out::println);
 
-// Output:
-// 1
-// 5
-// 7
+        // Output:
+        // 1
+        // 5
+        // 7
 
 
-// DROP WHILE
+        // DROP WHILE
         List.of(1L, 5L, 7L, 10L, 11L, 12L)
                 .stream()
                 .dropWhile(value -> value % 2 != 0)
                 .forEach(System.out::println);
 
-// Output:
-// 10
-// 11
-// 12
+        // Output:
+        // 10
+        // 11
+        // 12
 
         // COUNT
         int count =
@@ -94,27 +96,31 @@ public class FP02Functional {
                         .reduce(0L,
                                 (acc, cur) -> acc + 1));
         System.out.println("Count >> " + count);
-// SUM
+
+        // SUM
         Long sum1 =
                 List.of(1L, 2L, 3L)
                         .stream()
                         .reduce(0L,
                                 (acc, cur) -> acc + cur);
         System.out.println("Sum >> " + sum1);
-// MIN
+
+        // MIN
         Long min =
                 List.of(10L, 5L, 11L)
                         .stream()
                         .reduce(Long.MAX_VALUE,
                                 (acc, cur) -> acc.compareTo(cur) < 0 ? acc : cur);
         System.out.println("Min >> " + min);
-// MAX
+
+        // MAX
         Long max =
                 List.of(10L, 5L, 11L)
                         .stream()
                         .reduce(Long.MIN_VALUE,
                                 (acc, cur) -> acc.compareTo(cur) > 0 ? acc : cur);
         System.out.println("Max >> " + max);
+
 
     }
 }
